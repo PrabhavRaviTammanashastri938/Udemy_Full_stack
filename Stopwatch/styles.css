@@ -1,0 +1,56 @@
+body{
+    background-color: hsl(0, 13%, 14%);
+}
+
+.container{
+    display: inline-block;
+    border:5px solid rgb(208, 255, 0);
+    margin-top: 12%;
+    margin-left: 28%;
+    padding: 20px;
+    width: 610px;
+    height: 40vh;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.2rem;
+}
+#display{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 7rem;
+}
+.b{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.b1{
+    background-color: rgb(5, 195, 5);
+    font: 1.5em sans-serif;
+    width:30%;
+    height: 7vh;
+    color:whitesmoke;
+    border-radius: 20px;
+    border:none;
+}
+.b2{
+    background-color: rgb(9, 176, 205);
+    font: 1.5em sans-serif;
+    width:30%;
+    height: 7vh;
+    color:whitesmoke;
+    border-radius: 20px;
+    border:none;
+}
+.b3{
+    background-color: rgb(228, 68, 53);
+    font: 1.5em sans-serif;
+    width:30%;
+    height: 7vh;
+    color:whitesmoke;
+    border-radius: 20px;
+    border:none;
+}
