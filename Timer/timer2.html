@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timer Watch</title>
+</head>
+<body>
+<h1>Prabhav's RSP Timer</h1>
+<div class="entry">
+<label for="minutes" id="a">Enter minutes:</label>
+<input type="number" id="minutes" min="1">
+</div>
+<div class="container">
+    <div id="timerDisplay">
+        <center>00:00</center>
+    </div>
+<button onclick="startTimer()" class="b1">Start Timer</button>
+<button class="b2"><a href ="timer2.html">Reset</a></button>
+</div>
+<style>
+    body{
+    background-color: hsl(0, 13%, 14%);
+    display: block;
+    }
+    h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4rem;
+    color:white;
+    text-decoration: underline;
+    margin-left: 27%;
+}
+    .entry{
+        margin-left: 25%;
+    }
+#minutes{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    color:rgb(0, 0, 0);
+    }
+
+    #a{
+    width: 250px;
+    height: 6vh;
+    font-size: 2rem;
+    color: white;
+}
+.container{
+    display: inline-block;
+    border:5px solid rgb(208, 255, 0);
+    margin-top: 02%;
+    margin-left: 19%;
+    padding: 20px;
+    width: 910px;
+    height: 52vh;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+#timerDisplay{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18rem;
+}
+
+.b1{
+    margin-left: 20%;
+    background-color: rgb(5, 195, 5);
+    font: 1.5em sans-serif;
+    width:30%;
+    height: 7vh;
+    color:whitesmoke;
+    border-radius: 20px;
+    border:none;
+}
+.b1:hover{
+    background-color: rgb(5, 111, 5);
+    transition: 0.7s;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.b2{
+    background-color: rgb(205, 32, 9);
+    font: 1.5em sans-serif;
+    width:30%;
+    height: 7vh;
+    color:whitesmoke;
+    border-radius: 20px;
+    border:none;
+}
+
+.b2:hover{
+    background-color: rgb(101, 16, 5);
+    transition: 0.7s;
+}
+</style>
+<script>
+function startTimer() {
+    var minutesInput = document.getElementById("minutes").value;
+    var totalTimeInSeconds = minutesInput * 60;
+    var timerDisplay = document.getElementById("timerDisplay");
+
+    var timer = setInterval(function() {
+        var minutes = Math.floor(totalTimeInSeconds / 60);
+        var seconds = totalTimeInSeconds % 60;
+
+        timerDisplay.innerHTML = `&nbsp;${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+
+
+        if (totalTimeInSeconds <= 0) {
+            clearInterval(timer);
+            timerDisplay.textContent = "Timeup";
+        } else {
+            totalTimeInSeconds--;
+        }
+    }, 1000);
+}
+</script>
+</body>
+</html>
